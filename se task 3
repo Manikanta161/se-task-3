@@ -1,0 +1,35 @@
+class WeatherModel:
+    def _init_(self, location, initial_temperature):
+        self.location = location
+        self.current_temperature = initial_temperature
+
+    def collect_data(self, data_source):
+        # Simulate data collection from various sources (replace with real data collection)
+        # For simplicity, let's assume a linear change in temperature for this example
+        self.current_temperature += 1
+
+    def predict_temperature(self):
+        # Implement your weather modeling algorithm here (replace with a more sophisticated model)
+        # For simplicity, let's assume a basic linear model
+        predicted_temperature = self.current_temperature + 2
+        return predicted_temperature
+
+# Example usage
+if _name_ == "_main_":
+    # Initial conditions (replace with real data)
+    city = "SampleCity"
+    initial_temp = 20
+
+    # Create WeatherModel instance
+    weather_model = WeatherModel(city, initial_temp)
+
+    # Simulate data collection (replace with actual data sources)
+    for _ in range(5):
+        weather_model.collect_data("SampleDataSource")
+
+    # Predict temperature using the weather model
+    predicted_temp = weather_model.predict_temperature()
+
+    # Display results
+    print(f"Current temperature in {weather_model.location}: {weather_model.current_temperature}°C")
+    print(f"Predicted temperature for the next interval: {predicted_temp}°C")
